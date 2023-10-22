@@ -2,7 +2,6 @@
     require_once "./src/dbConnect.php";
     class Database {
         private $connection;
-    
         public function __construct($connection) {
             $this->connection = $connection;
         }
@@ -25,8 +24,7 @@
             $prepare = "SELECT * FROM `student` WHERE 1";
             if($filter != ''){
                 $prepare .= " AND class_id = ".$filter;
-            }
-            
+            } 
             if ($searchName != '') {
                 $names = explode(' ', $searchName);
 
@@ -53,7 +51,7 @@
             $data = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $data;
         }
-        //fonction getById de listUser
+        //fonction getById de student
         public function getByID ($id){
             $statement = $this->connection->prepare("SELECT * FROM `student` WHERE id = ?");
             $statement->bindParam(1,$id);
@@ -61,7 +59,6 @@
             $data = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $data;
         }
-        // dd(getByID($connection, 10));
         //function getByName 
         public function getByName ($name,$surname){
             $statement = $this->connection->prepare("SELECT * FROM student WHERE `name` = ? AND `surname` = ?");
@@ -71,7 +68,6 @@
             $data = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $data;
         }
-        // dd(getByName($connection,"exemple","exemple"));
         //fonction create
         public function create($payload ){
             $table = '(';
@@ -89,21 +85,18 @@
             VALUES ".$table );
             $statement ->execute();
         }
-        // create($connection,["exemple","exemple","2023-10-15","exemple","exemple","exempel","76100","exe","ee"]);
-        //fonction getAll de liste user
+        //fonction getAll de liste student
         public function getAll(){
             $statement = $this->connection->query("SELECT * FROM student WHERE 1 ORDER BY surname ASC");
             $data = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $data ;
         }
-        // dd(getAll($connection));
         // fonction delete 
         public function delete($id){
             $statement = $this->connection->prepare("DELETE FROM `student` WHERE id = ?");
             $statement->bindParam(1,$id);
             $statement ->execute();
         }
-        // delete($connection,1);
         //fonction update
         public function update($id,$payload){
             $first = false;
@@ -121,6 +114,4 @@
             $statement->bindParam(1,$id);
             $statement ->execute();
         }
-        // update($connection,2,["surname"=>"test","name"=>"test","birthday"=>"2023-10-16","email"=>"test","phone"=>"test","address"=>"test","postalcode"=>"76101","city"=>"test","description"=>"test"]);
-
     }

@@ -5,8 +5,9 @@ $database = new Database($connection);
 $formations = $database->getAllCLass();
 ?>
 <div class="container py-5 ">
+    <div class="text-center fw-bold fs-2 text-primary pb-5">Liste des étudiants</div>
     <div class="row">
-        <div class="col-mb-4 col-lg-4 bg-light ">
+        <div class="col-mb-4 col-lg-4 bg-light">
             <form action="#" method="post">
                 <div class="col-sm-12">
                     <label for="search" class="form-label">Recherche</label>

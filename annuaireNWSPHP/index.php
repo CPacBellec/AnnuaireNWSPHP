@@ -1,8 +1,6 @@
 <?php
-
 require_once './configs/bootstrap.php';
 ob_start();
-
 if(isset($_GET["page"]) ){
     if(frompage($_GET['page']) === false){
         header('Location: ./?page=home&layout=html');
@@ -11,11 +9,9 @@ if(isset($_GET["page"]) ){
     header('Location: ./?page=home&layout=html');
     exit;
 }
-
 $pageContent = [
     "html" => ob_get_clean(),
 ];
-
 if(isset($_GET["layout"])){
     include "./templates/layouts/". $_GET["layout"] .".layout.php";
 
