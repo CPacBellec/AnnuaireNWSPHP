@@ -33,13 +33,6 @@ function fromInc($name){
         return false;
     }
 }
-function fromstruc($name){
-    if(file_exists("./templates/structure/". $name . ".struc.php")){
-        include "./templates/structure/". $name . ".struc.php";
-    }else{
-        return false;
-    }
-}
 function frompage($name){
     if(file_exists("./templates/page/". $name .".page.php")){
         include "./templates/page/" . $name .".page.php"; 
