@@ -5,15 +5,16 @@ $database = new Database($connection);
 $formations = $database->getAllCLass();
 ?>
 <div class="container py-5 ">
+    <div class="text-center fw-bold fs-2 text-primary py-5">Liste des étudiants</div>
     <div class="row">
-        <div class="col-mb-4 col-lg-4 bg-light ">
+        <div class="col-mb-4 col-lg-4 bg-light">
             <form action="#" method="post">
                 <div class="col-sm-12">
-                    <label for="search" class="form-label">Recherche</label>
+                    <label for="search" class="form-label h6">Recherche :</label>
                     <input type="text" class="form-control " id="search" name="search" value="<?php echo (!empty($_POST['search']) ? $_POST['search'] : "" ); ?>" placeholder="Nom,prenom..." >
                 </div>
                 <div class="col-sm-12 py-4">
-                    <label for="filter" class="form-label">Formation</label>
+                    <label for="filter" class="form-label h6">Formation :</label>
                     <select name="filter" id="filter" class="form-select">
                         <option disabled selected hidden>Filtrer selon la formation... </option>
                         <option value="">Toutes les formations</option>
@@ -27,7 +28,7 @@ $formations = $database->getAllCLass();
                     </select>
                 </div>
                 <div class="col-sm-12">
-                    <label for="sort" class="form-label">Ordre de tri des noms</label>
+                    <label for="sort" class="form-label h6">Ordre de tri des noms :</label>
                     <select name="sort" id="sort" class="form-select">
                         <option value='asc' <?= ( isset($_POST['sort']) && $_POST['sort'] == 'asc' ? 'selected' : '') ?>>Croissant</option>
                         <option value='desc' <?= ( isset($_POST['sort']) && $_POST['sort'] == 'desc' ? 'selected' : '') ?>>Décroissant</option> 

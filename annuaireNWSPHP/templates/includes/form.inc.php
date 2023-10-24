@@ -32,14 +32,12 @@
                           <label for="birthday" class="form-label">Date de naissance<span class=" <?php echo (isset($_POST['submit'])? empty($_POST['birthday']) ?  "text-danger" :  "":  ""); ?>">*</span> :</label>
                           <input type="date" id="birthday" class="form-control <?php echo isset($_POST['submit']) && empty($_POST['birthday']) ? 'is-invalid' : ''; ?> " name="birthday" value="<?php echo !empty($_POST['birthday']) ? $_POST['birthday'] :(isset($res[0]['birthday']) ? $res[0]['birthday']:'');?>">
                           <br/>
-                      </div>
-                      
+                      </div>                     
                       <div class="col-6">
                           <label for="email" class="form-label">Email<span class=" <?php echo (isset($_POST['submit'])? empty($_POST['email']) ?  "text-danger" :  "":  ""); ?>">*</span> :</label>
                           <input type="email" id="email" class="form-control <?php echo isset($_POST['submit']) && empty($_POST['email']) ? 'is-invalid' : ''; ?>" name="email" placeholder="test@example.com" value="<?php echo !empty($_POST['email']) ? $_POST['email'] : (isset($res[0]['email']) ? $res[0]['email']:'');?>">
                           <br/>
                       </div>
-
                       <div class="col-6">
                         <label for="phone">Numéro de Téléphone<span class=" <?php echo (isset($_POST['submit'])? empty($_POST['phone']) ?  "text-danger" :  "":  ""); ?>">*</span> :</label>
                         <div class="input-group mt-2">
