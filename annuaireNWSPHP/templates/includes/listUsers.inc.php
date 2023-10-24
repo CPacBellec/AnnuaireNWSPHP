@@ -5,15 +5,16 @@ $database = new Database($connection);
 $formations = $database->getAllCLass();
 ?>
 <div class="container py-5 ">
+    <div class="text-center fw-bold fs-2 text-primary py-5">Liste des étudiants</div>
     <div class="row">
-        <div class="col-mb-4 col-lg-4 bg-light ">
+        <div class="col-mb-4 col-lg-4 bg-light">
             <form action="#" method="post">
                 <div class="col-sm-12">
-                    <label for="search" class="form-label">Recherche</label>
+                    <label for="search" class="form-label h6">Recherche :</label>
                     <input type="text" class="form-control " id="search" name="search" value="<?php echo (!empty($_POST['search']) ? $_POST['search'] : "" ); ?>" placeholder="Nom,prenom..." >
                 </div>
                 <div class="col-sm-12 py-4">
-                    <label for="filter" class="form-label">Formation</label>
+                    <label for="filter" class="form-label h6">Formation :</label>
                     <select name="filter" id="filter" class="form-select">
                         <option disabled selected hidden>Filtrer selon la formation... </option>
                         <option value="">Toutes les formations</option>
@@ -27,7 +28,7 @@ $formations = $database->getAllCLass();
                     </select>
                 </div>
                 <div class="col-sm-12">
-                    <label for="sort" class="form-label">Ordre de tri des noms</label>
+                    <label for="sort" class="form-label h6">Ordre de tri des noms :</label>
                     <select name="sort" id="sort" class="form-select">
                         <option value='asc' <?= ( isset($_POST['sort']) && $_POST['sort'] == 'asc' ? 'selected' : '') ?>>Croissant</option>
                         <option value='desc' <?= ( isset($_POST['sort']) && $_POST['sort'] == 'desc' ? 'selected' : '') ?>>Décroissant</option> 
@@ -38,10 +39,11 @@ $formations = $database->getAllCLass();
             </form>
         </div>
         <div class="col-md-8 col-lg-8">
-            <table class="table text-center">
+            <table class="table text-center table-bordered ">
             <thead class="thead">
-                <tr class="table-primary">
-                <th scope="col">Nom Prénom</th>
+                <tr class="table-primary table-striped ">
+                <th scope="col">Nom </th>
+                <th scope="col">Prénom</th>
                 <th scope="col">Adresse mail</th>
                 <th scope="col">Numéro de Téléphone</th>
                 <th scope="col">Formation</th>
@@ -61,9 +63,10 @@ $formations = $database->getAllCLass();
                            $formation = $database->getByIdClass($value["class_id"]);
                     ?>
                             <tr>
-                                <td><?= $value["surname"] .' '.$value["name"] ?></td>
+                                <td><?= $value["surname"] ?></td>
+                                <td><?= $value["name"] ?></td>
                                 <td><?= $value["email"] ?></td>
-                                <td><?= $value["phone"] ?></td>
+                                <td>0<?= $value["phone"] ?></td>
                                 <td><?= $formation[0]['class_name'] ?></td>
                                 <td><a href="./?page=info&layout=html&id=<?= $value["id"] ?>"><i class="bi bi-eye"></i></a>   <a href="./?page=update&layout=html&id=<?= $value["id"] ?>" ><i class="bi bi-pencil-square"></i></a>   <a href="./?page=delete&layout=html&id=<?= $value["id"] ?>"><i class="bi bi-trash"></i></a></td>
                             </tr>

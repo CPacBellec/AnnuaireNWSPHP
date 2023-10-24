@@ -1,5 +1,3 @@
-<br>
-<br>
 <?php
     require './src/dbConnect.php';
     $database = new Database($connection);
@@ -9,19 +7,18 @@
         $formation = $database->getByIdCLass($res[0]['class_id']);
     }
 ?>
-<main class="flex-shrink-0 m-5">
-    <div class="container-xl px-4 mt-4">
-    <div class="h4 text-center text-primary">Profil de l'étudiant</div>
-    <hr class="mt-0 mb-4">
+<main class="flex-shrink-0 m-5 py-5">
+    <div class="container-xl px-4 ">
+    <div class="text-center fw-bold fs-2 text-primary pb-4">Profil de l'étudiant</div>
         <div class="row">
             <div class="col-xl-12">
                 <div class="card mb-4">
-                    <div class="card-header text-center">Détails <a href="./?page=update&layout=html&id=<?= $res[0]["id"] ?>" ><i class="bi bi-pencil-square"></i></a></div>
+                    <div class="card-header text-center fs-4">Modifier le profil : <a href="./?page=update&layout=html&id=<?= $res[0]["id"] ?>" ><i class="bi bi-pencil-square"></i></a></div>
                     <div class="card-body">
                         <fieldset disabled>
                             <div class="row gx-3 mb-3">
                                 <div class="col-md-4">
-                                    <label for="surname" class="form-label">Nom :</label>
+                                    <label for="surname" class="form-label h6">Nom :</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="bi bi-person"></i></div>
@@ -30,7 +27,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="name" class="form-label">Prénom :</label>
+                                    <label for="name" class="form-label h6">Prénom :</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="bi bi-person"></i></div>
@@ -39,7 +36,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="birthDay" class="form-label">Date de naissance :</label>
+                                    <label for="birthday" class="form-label h6">Date de naissance :</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="bi bi-calendar4"></i></div>
@@ -50,7 +47,7 @@
                             </div>
                             <div class="row gx-3 mb-3">
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="email">Email :</label>
+                                    <label class="small mb-1 h6" for="email">Email :</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="bi bi-envelope"></i></div>
@@ -59,7 +56,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="phone">Numéro de Téléphone :</label>
+                                    <label class="small mb-1 h6" for="phone">Numéro de Téléphone :</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="bi bi-telephone"></i>+33</div>
@@ -71,7 +68,7 @@
 
                             <div class="row gx-3 mb-3">
                                 <div class="col-md-4">
-                                    <label class="small mb-1" for="address">Adresse :</label>
+                                    <label class="small mb-1 h6" for="address">Adresse :</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="bi bi-house"></i></div>
@@ -80,7 +77,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label class="small mb-1" for="postalcode">Code postal :</label>
+                                    <label class="small mb-1 h6" for="postalcode">Code postal :</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="bi bi-mailbox-flag"></i></div>
@@ -89,7 +86,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label class="small mb-1" for="city">Ville :</label>
+                                    <label class="small mb-1 h6" for="city">Ville :</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="bi bi-geo-alt"></i></div>
@@ -99,7 +96,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                    <label class="small mb-1" for="email">Formation souhaitée :</label>
+                                    <label class="small mb-1 h6" for="email">Formation souhaitée :</label>
                             
                                     <div class="input-group">
                                         <div class="input-group-prepend">

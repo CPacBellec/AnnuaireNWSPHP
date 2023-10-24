@@ -5,7 +5,7 @@
                 <svg class="bi me-2" width="40" height="32">
                     <image xlink:href="./picture/NWS.png" width="40" height="32" />
                 </svg>
-                <span class="navbar-brand text-primary ">Annuaire NWS</span>
+                <span class="navbar-brand text-primary fs-3 fw-semibold">Annuaire NWS</span>
             </a>
             <ul class="nav nav-pills">
                 <li class="nav-item px-2"><a href="./?page=home&layout=html" class="nav-link <?php echo (isset( $_GET['page']) ? ($_GET['page'] == "home" ? "active" : "") : "active"); ?>" aria-current="page">Accueil</a></li>
